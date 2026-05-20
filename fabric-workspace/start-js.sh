@@ -1,6 +1,6 @@
 #!/bin/bash
 
-echo "========== 启动学业证书存证系统 (Go链码) =========="
+echo "========== 启动学业证书存证系统 (JavaScript链码) =========="
 
 # 进入测试网络目录
 cd ~/certificate-system/fabric-workspace/fabric-samples/test-network
@@ -13,12 +13,12 @@ echo "0. 停止旧网络..."
 echo "1. 启动Fabric网络..."
 ./network.sh up createChannel -c mychannel
 
-# 部署 Go 链码
-echo "2. 部署Go链码..."
+# 部署 JavaScript 链码
+echo "2. 部署JavaScript链码..."
 ./network.sh deployCC -c mychannel \
   -ccn certcode \
   -ccp ../../certificate-chaincode \
-  -ccl go
+  -ccl javascript
 
 # 检查部署是否成功
 if [ $? -ne 0 ]; then
@@ -73,7 +73,7 @@ if [ $? -ne 0 ]; then
 fi
 
 echo ""
-echo "========== ✅ 学业证书存证系统(Go链码)启动完成！=========="
+echo "========== ✅ 学业证书存证系统(JavaScript链码)启动完成！=========="
 echo ""
 echo "常用命令："
 echo "  查询证书: peer chaincode query -C mychannel -n certcode -c '{\"function\":\"queryCertificate\",\"Args\":[\"证书ID\"]}'"
