@@ -63,15 +63,11 @@ sudo usermod -aG docker $USER
 ### 步骤2：下载项目和 Fabric
 
 ```bash
-# 创建工作目录
-mkdir -p ~/certificate-system && cd ~/certificate-system
-
 # 克隆项目（或复制项目文件）
-# git clone <项目仓库地址>
+git clone https://github.com/LittlePonyOvO/certificate-system.git
 
 # 下载 Hyperledger Fabric 2.4
-curl -sSL https://bit.ly/2ysbOFE | bash -s -- 2.4.9 1.5.3
-
+ cd ~/certificate-system/fabric-workspace && curl -sSL https://bit.ly/2ysbOFE | bash -s -- 2.4.9 1.5.3
 # 等待下载完成（约5-10分钟）
 ```
 
